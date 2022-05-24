@@ -1,6 +1,6 @@
 use crate::textures::GameTextures;
 use crate::window::WindowSize;
-use crate::PLAYER_SPRITE;
+use crate::{LASER_SPRITE, PLAYER_SPRITE};
 use bevy::prelude::*;
 
 pub struct SetupPlugin;
@@ -36,6 +36,7 @@ fn setup_sytem(
     // Add GameTextures resource
     let game_textures = GameTextures {
         player: asset_server.load(PLAYER_SPRITE),
+        player_laser: asset_server.load(LASER_SPRITE),
     };
     commands.insert_resource(game_textures);
 }
